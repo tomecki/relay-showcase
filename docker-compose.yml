@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    build: api
+    ports:
+    - "7000:7000"
+    volumes:
+    - ./api:/app
+    links:
+    - db
+  db:
+    image: postgres
+    ports:
+    - "5432:5432"
+    expose:
+    - "5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=airbnb_db
+    volumes:
+      - ./db/data:/data
+      - ./db/init:/docker-entrypoint-initdb.d
