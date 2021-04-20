@@ -1,5 +1,5 @@
 aniso8601==7.0.0
-asyncpg==0.20.1
+asyncpg==0.21.0
 Click==7.0
 databases==0.2.6
 fastapi==0.48.0
